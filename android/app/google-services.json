@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "542978622284",
+    "project_id": "zahra-21c47",
+    "storage_bucket": "zahra-21c47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542978622284:android:1385fd7183db082c2505e9",
+        "android_client_info": {
+          "package_name": "com.mo.zahra_gp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542978622284-u2aduhk1oqebn3ih11jsr94nd0t2hje4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzgKKHAQWMry24CZy2csw0u6pMS8ig7Ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542978622284-u2aduhk1oqebn3ih11jsr94nd0t2hje4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
