@@ -24,6 +24,8 @@ class HomeView extends StatelessWidget {
         body: Container(
           padding: const EdgeInsets.only(right: AppSize.s14),
           child: Column(
+
+
               children: [
             Align(
               alignment: Alignment.topRight,
@@ -85,6 +87,7 @@ class HomeView extends StatelessWidget {
               child: Container(
                   padding: const EdgeInsets.only(bottom: AppPadding.p14),
                   width: double.infinity,
+                  height: double.infinity,
                   child: Container(
                     padding: const EdgeInsets.only(
                         top: AppSize.s14,
