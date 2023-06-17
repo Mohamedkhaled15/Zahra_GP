@@ -6,6 +6,13 @@ import 'package:zahra_gp/presentation/screens/dalyCheckup_screen/dalyChecup_view
 import 'package:zahra_gp/presentation/screens/main_screen/main_view.dart';
 import 'package:zahra_gp/presentation/screens/medicine_screen/medicine_view.dart';
 import 'package:zahra_gp/presentation/screens/selfExam_screen/selfExam_view.dart';
+import '../../layout/shop_layout/main_layout.dart';
+import '../../view/screens/log_in_screen/log_in_screen.dart';
+import '../../view/screens/on_boarding/on_boarding_screen.dart';
+import '../../view/screens/on_boarding/on_boarding_start.dart';
+import '../../view/screens/register_screen/register_view.dart';
+import '../../view/screens/splash_screen/splash_animation.dart';
+import '../../view/screens/splash_screen/splash_view.dart';
 import '../screens/doctor_screen/doctor_view.dart';
 import '../screens/doctor_screen/tabs/private_doctor/private_doctor.dart';
 import '../screens/doctor_screen/tabs/reversation/call_details.dart';
@@ -45,6 +52,12 @@ class Routes {
   static const String done = "/done";
   static const String signIn = "/signIn";
   static const String privateDoctor = "/privateDoctor";
+  static const String mainLayout = "/main_layout";
+  static const String splashRouteTwoRoute= "/splashAnimation";
+  static const String onBoardingRoute = "/onBoarding";
+  static const String onBoardingStartingRoute = "/onBoardingStart";
+
+
 }
 
 class RouteGenerator {
@@ -55,7 +68,7 @@ class RouteGenerator {
       case Routes.medicineRoute:
         return MaterialPageRoute(builder: (_) =>   MedicineView());
       case Routes.mainRoute:
-        return MaterialPageRoute(builder: (_) =>  MainView());
+        return MaterialPageRoute(builder: (_) =>   const MainView());
       case Routes.addInfoRoute:
         return MaterialPageRoute(builder: (_) => const AddInfoView());
       case Routes.dalyCheckupRoute:
@@ -63,7 +76,7 @@ class RouteGenerator {
       case Routes.doctorRoute:
         return MaterialPageRoute(builder: (_) => const DoctorView());
       case Routes.notificationRoute:
-        return MaterialPageRoute(builder: (_) =>  NotificationView());
+        return MaterialPageRoute(builder: (_) =>  const NotificationView());
       case Routes.profileRoute:
         return MaterialPageRoute(builder: (_) =>  ProfileView());
       case Routes.selfExamRoute:
@@ -77,15 +90,39 @@ class RouteGenerator {
         case Routes.callDetails:
         return MaterialPageRoute(builder: (_) =>  CallDetails());
         case Routes.payFawry:
-        return MaterialPageRoute(builder: (_) =>  PayFawry());
+        return MaterialPageRoute(builder: (_) =>  const PayFawry());
         case Routes.creditPay:
-        return MaterialPageRoute(builder: (_) =>  CreditPay());
+        return MaterialPageRoute(builder: (_) =>  const CreditPay());
         case Routes.done:
-        return MaterialPageRoute(builder: (_) =>  Done());
+        return MaterialPageRoute(builder: (_) =>  const Done());
         case Routes.signIn:
-        return MaterialPageRoute(builder: (_) =>  SignIn());
+        return MaterialPageRoute(builder: (_) =>  const SignIn());
         case Routes.privateDoctor:
-        return MaterialPageRoute(builder: (_) =>  PrivateDoctor());
+        return MaterialPageRoute(builder: (_) =>  const PrivateDoctor());
+        case Routes.splashRoute:
+        return MaterialPageRoute(builder: (_) =>  const SplashView());
+      case Routes.splashRouteTwoRoute:
+        return MaterialPageRoute(builder: (_) => const SplashAnimation());
+      case Routes.onBoardingRoute:
+        return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
+      case Routes.onBoardingStartingRoute:
+        return MaterialPageRoute(builder: (_) => const OnBoardingStart());
+      case Routes.loginRoute:
+        return MaterialPageRoute(builder: (_) => LogIn());
+      case Routes.registerRoute:
+        return MaterialPageRoute(builder: (_) => Register());
+
+    // case Routes.homeRoute:
+    //   return MaterialPageRoute(builder: (_) =>  HomeView());
+    // case Routes.mainRoute:
+    //   return MaterialPageRoute(builder: (_) =>  MainView());
+
+
+
+
+
+
+
 
       default:
         return unDefinedRoute();

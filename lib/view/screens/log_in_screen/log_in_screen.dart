@@ -3,10 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
-
+import 'package:zahra_gp/presentation/screens/main_screen/main_view.dart';
 import '../../../core/component/default_button.dart';
 import '../../../core/component/shared_component.dart';
 import '../../../core/constant/colors_manager.dart';
@@ -29,7 +27,6 @@ import 'cubit/cubit.dart';
 import 'cubit/state.dart';
 
 class LogIn extends StatefulWidget {
-
   LogIn({Key? key}) : super(key: key);
 
   @override
@@ -61,7 +58,6 @@ class _LogInState extends State<LogIn> {
               ).then((value) {
                 userToken = state.userDataModel.data!.token;
                 debugPrint('Login Token ---> $userToken');
-
                 ShopCubit shopCubit = ShopCubit.get(ctx);
                 shopCubit.getUserData();
                 showToast(
@@ -69,8 +65,7 @@ class _LogInState extends State<LogIn> {
                   state: ToastStates.SUCCESS,
                 );
                 loginCubit.isButtonLoginClicked = false;
-
-                navigateAndFinish(ctx, const MainLayout());
+                navigateAndFinish(ctx, const MainView());
               });
             } else {
               // Email or password incorrect
@@ -84,7 +79,6 @@ class _LogInState extends State<LogIn> {
         },
         builder: (ctx, state) {
           ShopLoginCubit cubit = ShopLoginCubit.get(ctx);
-
           return SafeArea(
             child: Scaffold(
               appBar: AppBar(
@@ -97,7 +91,7 @@ class _LogInState extends State<LogIn> {
                         final googleSignIn = GoogleSignIn();
                         await googleSignIn.signOut();
                       },
-                      icon:  Icon(
+                      icon: Icon(
                         Icons.logout_outlined,
                         color: ColorManager.secondary,
                       )),
@@ -110,7 +104,7 @@ class _LogInState extends State<LogIn> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 68,
                     ),
-                     Text(
+                    const Text(
                       AppStrings.welcomeBack,
                       style: TextStyle(
                         fontWeight: FontWeightManager.light,
@@ -160,8 +154,7 @@ class _LogInState extends State<LogIn> {
                                   suffixIconData: cubit.icon,
                                   suffixPressed: () {
                                     cubit.changePasswordVisibility();
-                                    setState(() {
-                                    });
+                                    setState(() {});
                                   },
                                   onSubmittedFun: (value) {
                                     if (formKey.currentState!.validate()) {
@@ -225,14 +218,14 @@ class _LogInState extends State<LogIn> {
                                   height:
                                       MediaQuery.of(context).size.height / 60,
                                 ),
-                                 FaceBookAndGoogleItems(
-                                  onPressed: (){
+                                FaceBookAndGoogleItems(
+                                  onPressed: () {
                                     Get.to(
-                                    () =>Register(),
+                                      () => Register(),
                                     );
                                   },
-                                  text_one:AppStrings.noHaveAccount ,
-                                  text_two:AppStrings.createAccount ,
+                                  text_one: AppStrings.noHaveAccount,
+                                  text_two: AppStrings.createAccount,
                                 ),
                               ],
                             ),
@@ -249,24 +242,21 @@ class _LogInState extends State<LogIn> {
       ),
     );
   }
-
   Future<User?> googleSignInAction() async {
     final GoogleSignInAccount? googleSignInAccount =
         await (googleSignIn.signIn());
     final GoogleSignInAuthentication? googleSignInAuthentication =
         await googleSignInAccount?.authentication;
-
     final AuthCredential credential = GoogleAuthProvider.credential(
       accessToken: googleSignInAuthentication?.accessToken,
       idToken: googleSignInAuthentication?.idToken,
     );
-
     final UserCredential authResult =
         await auth.signInWithCredential(credential);
     final User? user = authResult.user;
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const MainLayout()),
+      MaterialPageRoute(builder: (context) => const MainView()),
     );
     return user;
   }

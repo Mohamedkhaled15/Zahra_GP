@@ -1,5 +1,3 @@
-
-
 import '../core/constant/image_assets_manager.dart';
 import '../core/constant/routes_manager.dart';
 import '../core/constant/strings_manger.dart';
@@ -13,6 +11,7 @@ class HomeController{
     AppImageAsset.medicalCheckupLogo,
     AppImageAsset.essaysIcon,
   ];
+
   var listImg=[
     "assets/images/doctor.png",
     "assets/images/.png",
@@ -35,10 +34,5 @@ class HomeController{
     Routes.selfExamRoute,
     Routes.dalyCheckupRoute,
     Routes.addInfoRoute,
-
-
   ];
-
-
-
 }

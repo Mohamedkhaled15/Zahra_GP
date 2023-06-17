@@ -82,7 +82,7 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
                   registerCubit.isButtonRegisterClicked = false;
                   ////////////////////
                   // ignore: use_build_context_synchronously
-                  navigateAndFinish(ctx,  const MainLayout ());
+                  navigateAndFinish(ctx,  const MainView());
                 });
               } else {
                 // Email or password incorrect
@@ -352,7 +352,7 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
 
     final UserCredential authResult = await auth.signInWithCredential(credential);
     final User? user = authResult.user;
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>const MainLayout()),);
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>const MainView()),);
     return user;
   }
 

@@ -1,51 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/constant/colors_manager.dart';
 import '../../../core/constant/image_assets_manager.dart';
-import '../home_screen/home_view.dart';
-import '../notification_screen/notification_view.dart';
-import '../profile_screen/profile_view.dart';
+import '../../../layout/shop_layout/cubit/cubit.dart';
+import '../../../layout/shop_layout/cubit/state.dart';
 
-class MainView extends StatefulWidget {
+import '/shared/constant/constant.dart';
 
 
-  @override
-  State<MainView> createState() => _MainViewState();
-}
 
-class _MainViewState extends State<MainView> {
-  int currentIndex=1;
-  List<Widget> screens=[
-    const NotificationView(),
-    HomeView(),
-    const ProfileView(),
-
-  ];
+class MainView extends StatelessWidget {
+  const MainView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: screens[currentIndex],
-      backgroundColor: ColorManager.primary,
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (index){
-          setState(()
-          {
-            currentIndex=index;
+    return BlocConsumer<ShopCubit, ShopStates>(
+      listener: (ctx, state) {},
+      builder: (ctx, state) {
+        var cubit = ShopCubit.get(ctx);
+        return Scaffold(
 
-          });
-        },
+          body: cubit.screens[cubit.currentIndexBottomNavigateBar],
 
-        backgroundColor: ColorManager.darkPage,
-        currentIndex: currentIndex,
-        type: BottomNavigationBarType.fixed,
-        items:  [
-          BottomNavigationBarItem(icon:currentIndex==0? IconManager.bellFill:IconManager.bell,label: ''),
-          BottomNavigationBarItem(icon:currentIndex==1? IconManager.homeFill:IconManager.home,label: ''),
-          BottomNavigationBarItem(icon:currentIndex==2? IconManager.personFill:IconManager.person,label: ''),
-        ],
-      ),
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: ColorManager.primary,
+            currentIndex: cubit.currentIndexBottomNavigateBar,
+            items:   [
+              BottomNavigationBarItem(
+                icon: cubit.currentIndexBottomNavigateBar==0?IconManager.bellFill:IconManager.bell,
+                label: "",
 
+              ),
+              BottomNavigationBarItem(
+                icon: cubit.currentIndexBottomNavigateBar==1? IconManager.homeFill:IconManager.home,
+                label: "",
+
+              ),
+              BottomNavigationBarItem(
+                icon: cubit.currentIndexBottomNavigateBar==2? IconManager.personFill:IconManager.person,
+                label: "",
+
+              ),
+              // const BottomNavigationBarItem(
+              //   icon: Icon(Icons.settings),
+              //   label: "",
+              //
+              // ),
+            ],
+            onTap: (index) => cubit.changeIndexBottomNavBar(index),
+          ),
+        );
+      },
     );
   }
 }

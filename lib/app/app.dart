@@ -45,9 +45,8 @@ class _MyAppState extends State<MyApp> {
     // ShopCubit cubit = ShopCubit.get(ctx);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-
       onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.mainRoute,
+      initialRoute: Routes.splashRoute,
       theme: getAppTheme(),
 
     );

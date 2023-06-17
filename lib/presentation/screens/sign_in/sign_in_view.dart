@@ -103,7 +103,7 @@ class _SignInState extends State<SignIn> {
                        try{
                          final user= await _auth.
                        signInWithEmailAndPassword(email: email, password: password);
-                          Navigator.pushNamed(context, Routes.doctorRoute);
+                          Navigator.pushNamed(context, Routes.mainLayout);
                        }catch(error){
                          print(error);
                        }
