@@ -144,8 +144,6 @@ class _ProfileViewState extends State<ProfileView> {
                       onPressed: () {
                         isEdited = !isEdited;
                         isSelected = false;
-
-
                         setState(() {});
                       },
                       child: Container(
