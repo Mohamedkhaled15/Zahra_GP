@@ -9,9 +9,9 @@ import '../../../core/constant/font_manager.dart';
 import '../../../core/constant/image_assets_manager.dart';
 import '../../../core/constant/strings_manger.dart';
 import '../../../core/constant/values_manger.dart';
-
-import '../../../view/screens/add_plane_screen/add_plan_view.dart';
-import '../../../view/widget/item_drawer.dart';
+import '../../../presentation/component/item_drawer.dart';
+import '../../widget/item_drawer.dart';
+import '../add_plane_screen/add_plan_view.dart';
 import '../home_screen/home_view.dart';
 import '../notification_screen/notification_view.dart';
 import '../profile_screen/profile_view.dart';
@@ -29,20 +29,20 @@ class _MedicineViewState extends State<MedicineView> {
   List<Widget> screens=[
   const NotificationView(),
   HomeView(),
-  ProfileView()
+  const ProfileView()
   ];
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
-      child: Scaffold(
-        backgroundColor: ColorManager.primary,
-        endDrawer: Drawer(
-          backgroundColor: ColorManager.darkPage,
-          child: const ItemDrawer2(),
+    return  Scaffold(
+      backgroundColor: ColorManager.primary,
+      endDrawer: Drawer(
+        backgroundColor: ColorManager.darkPage,
+        child: const ItemDrawer(),
 
-        ),
-        body:Column(
+      ),
+      body:SafeArea(
+        child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.only(right: 25,top: 20),
@@ -90,9 +90,9 @@ class _MedicineViewState extends State<MedicineView> {
 
           ],
         ),
-
-
       ),
+
+
     );
   }
 }

@@ -53,7 +53,7 @@ class RouteGenerator {
       case Routes.homeRoute:
         return MaterialPageRoute(builder: (_) =>  HomeView());
       case Routes.medicineRoute:
-        return MaterialPageRoute(builder: (_) =>  const MedicineView());
+        return MaterialPageRoute(builder: (_) =>   MedicineView());
       case Routes.mainRoute:
         return MaterialPageRoute(builder: (_) =>  MainView());
       case Routes.addInfoRoute:

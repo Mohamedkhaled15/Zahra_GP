@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:zahra_gp/presentation/resources/color_manager.dart';
 import 'package:zahra_gp/presentation/resources/font_manager.dart';
 import 'package:zahra_gp/presentation/resources/routes_manager.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
 
       onGenerateRoute: RouteGenerator.getRoute,

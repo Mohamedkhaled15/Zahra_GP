@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:zahra_gp/presentation/component/drawer_line.dart';
 import 'package:zahra_gp/presentation/resources/assets_manager.dart';
 import 'package:zahra_gp/presentation/resources/color_manager.dart';
-import 'package:zahra_gp/presentation/resources/font_manager.dart';
 import 'package:zahra_gp/presentation/resources/strings_manager.dart';
 import 'package:zahra_gp/presentation/resources/styles_manager.dart';
+import '../../view/widget/button_logout.dart';
 
 class ItemDrawer extends StatelessWidget {
   const ItemDrawer({Key? key}) : super(key: key);
@@ -30,7 +30,11 @@ class ItemDrawer extends StatelessWidget {
                   const SizedBox(
                     height: 50,
                   ),
-                      DrawerLine(title:AppStrings.logout,image: ImageAssets.logout),
+                      InkWell(
+                        onTap: (){
+                          const ButtonLogoutItem();
+                        },
+                          child: DrawerLine(title:AppStrings.logout,image: ImageAssets.logout)),
             ],
           )),
 

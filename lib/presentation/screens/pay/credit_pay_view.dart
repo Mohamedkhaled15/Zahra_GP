@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:zahra_gp/presentation/resources/font_manager.dart';
 import 'package:zahra_gp/presentation/resources/routes_manager.dart';
 import 'package:zahra_gp/presentation/resources/styles_manager.dart';
-
 import '../../component/continue_button.dart';
 import '../../component/item_drawer.dart';
 import '../../component/page_head.dart';
