@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-
-
 import '../../../core/component/default_button.dart';
 import '../../../core/constant/colors_manager.dart';
 import '../../../core/constant/font_manager.dart';
@@ -79,9 +77,7 @@ class _MedicineViewState extends State<MedicineView> {
               fontWight: FontWeightManager.bold,
               text:AppStrings.textMedicineFollow,
               onTap: (){
-                Get.to(
-                      () =>  AddPlaneView(),
-                );
+                Get.to(() =>  AddPlaneView(),);
               },
                width: MediaQuery.of(context).size.width/1.3,
               height:MediaQuery.of(context).size.height/16,

@@ -11,6 +11,7 @@ import '../../../core/constant/font_manager.dart';
 import '../../../core/constant/image_assets_manager.dart';
 import '../../../core/constant/strings_manger.dart';
 import '../../../core/constant/values_manger.dart';
+import '../../../presentation/component/item_drawer.dart';
 import '../../widget/appoinment_first_dose.dart';
 import '../../widget/button_save_data_add_plan.dart';
 import '../../widget/custom_text_form_field.dart';
@@ -44,7 +45,7 @@ class _AddPlaneViewState extends State<AddPlaneView> {
         backgroundColor: ColorManager.primary,
         endDrawer: Drawer(
           backgroundColor: ColorManager.darkPage,
-          child: const ItemDrawer2(),
+          child: const ItemDrawer(),
         ),
         body: Column(
           children: [
