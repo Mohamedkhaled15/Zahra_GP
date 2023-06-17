@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Dart SDK"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Dart Packages"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Flutter Plugins"/>
+	<classpathentry kind="output" path="out/production/zahra_gp"/>
+</classpath>

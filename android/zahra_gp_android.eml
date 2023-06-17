@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" jdk="openjdk-19" jdk_type="JavaSDK">
+	<output-test url="file://$MODULE_DIR$/../out/test/zahra_gp_android"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<levels>
+		<level name="Flutter for Android" value="project"/>
+		<level name="KotlinJavaRuntime" value="project"/>
+		<level name="Dart SDK" value="project"/>
+		<level name="Dart Packages" value="project"/>
+	</levels>
+</component>

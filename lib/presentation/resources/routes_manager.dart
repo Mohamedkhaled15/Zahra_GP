@@ -19,6 +19,7 @@ import '../screens/pay/fawry_pay_view.dart';
 import '../screens/profile_screen/profile_view.dart';
 import '../screens/sign_in/sign_in_view.dart';
 
+
 class Routes {
   //main routes
   static const String splashRoute = "/";
@@ -103,3 +104,5 @@ class RouteGenerator {
             ));
   }
 }
+
+

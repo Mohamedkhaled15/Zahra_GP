@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/openjdk-19"/>
+	<classpathentry kind="src" path="app/src/main/java"/>
+	<classpathentry kind="src" path="app/src/main/kotlin"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Flutter for Android"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/KotlinJavaRuntime"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Dart SDK"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Dart Packages"/>
+	<classpathentry kind="output" path="/out/production/zahra_gp_android"/>
+</classpath>
