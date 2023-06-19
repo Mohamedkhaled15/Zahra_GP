@@ -69,6 +69,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) =>   MedicineView());
       case Routes.mainRoute:
         return MaterialPageRoute(builder: (_) =>   const MainView());
+      case Routes.mainLayout:
+        return MaterialPageRoute(builder: (_) =>   const MainLayout());
       case Routes.addInfoRoute:
         return MaterialPageRoute(builder: (_) => const AddInfoView());
       case Routes.dalyCheckupRoute:

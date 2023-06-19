@@ -10,6 +10,7 @@ import '../../../core/component/shared_component.dart';
 import '../../../core/constant/colors_manager.dart';
 import '../../../core/constant/font_manager.dart';
 import '../../../core/constant/image_assets_manager.dart';
+import '../../../core/constant/routes_manager.dart';
 import '../../../core/constant/strings_manger.dart';
 import '../../../core/constant/values_manger.dart';
 import '../../../data/model/register_model/register.dart';
@@ -65,7 +66,8 @@ class _LogInState extends State<LogIn> {
                   state: ToastStates.SUCCESS,
                 );
                 loginCubit.isButtonLoginClicked = false;
-                navigateAndFinish(ctx, const MainView());
+                navigateAndFinish(ctx, const MainLayout());
+
               });
             } else {
               // Email or password incorrect
@@ -256,7 +258,7 @@ class _LogInState extends State<LogIn> {
     final User? user = authResult.user;
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const MainView()),
+      MaterialPageRoute(builder: (context) => const MainLayout()),
     );
     return user;
   }

@@ -32,8 +32,6 @@ dependencies:
   syncfusion_flutter_datepicker:
   calendar_date_picker2:
   socket_io_client:
-
-
   shared_preferences:
   flutter_custom_tab_bar:
   avatar_view:
@@ -50,12 +48,10 @@ dependencies:
   cupertino_icons:
   get:
   animated_splash_screen:
-
   dio:
-
   http:
   conditional_builder_null_safety:
-  fluttertoast:
+  fluttertoast: ^8.2.2
   google_sign_in:
   get_storage:
   flutter_facebook_auth:
@@ -63,13 +59,11 @@ dependencies:
   hive_generator:
   hive_flutter:
   hive:
-
   firebase_core:
   firebase_auth:
   cloud_firestore:
   bloc:
   flutter_bloc:
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -96,22 +90,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/doctor1.png
-    - assets/images/doctor2.png
-    - assets/images/essaysIcon.png
-    - assets/images/group.png
-    - assets/images/medicine.png
-    - assets/images/noNotification.png
-    - assets/images/article.png
-    - assets/images/medicalCheckup2.png
-    - assets/images/new.png
-    - assets/images/searching.png
-    - assets/images/medicine2.png
-    - assets/images/medicalCheckup2.png
-    - assets/images/mc.png
-    - assets/images/me.jpg
-    - assets/images/star1.png
-    - assets/images/star2.png
     - assets/images/
 
 

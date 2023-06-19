@@ -16,10 +16,11 @@ import '../shared/constant/constant.dart';
 
 class MyApp extends StatefulWidget {
 //named constructor
-  MyApp._internal();
-  static final MyApp _instance= MyApp._internal();//singleton
+  const MyApp._internal();
 
-  factory MyApp()=> _instance;//factory
+  static const MyApp _instance = MyApp._internal(); //singleton
+
+  factory MyApp() => _instance; //factory
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -27,36 +28,30 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<ShopCubit>(create: (_){
-
-      if (userToken == null) {
-        return ShopCubit();
-      }
-      else {
-        return ShopCubit()
-          ..getUserData();
-      }
-    },
-
-        child: BlocConsumer<ShopCubit, ShopStates>(
-
+    return BlocProvider<ShopCubit>(
+      create: (_) {
+        if (userToken == null) {
+          return ShopCubit();
+        } else {
+          return ShopCubit()..getUserData();
+        }
+      },
+      child: BlocConsumer<ShopCubit, ShopStates>(
         listener: (ctx, state) {},
-    builder: (ctx, state) {
-    // ShopCubit cubit = ShopCubit.get(ctx);
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.splashRoute,
-      theme: getAppTheme(),
-
+        builder: (ctx, state) {
+          // ShopCubit cubit = ShopCubit.get(ctx);
+          return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: RouteGenerator.getRoute,
+            initialRoute: Routes.splashRoute,
+            theme: getAppTheme(),
+          );
+        },
+      ),
     );
-    },
-        ),
-    );
-
-
   }
 }
+
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
@@ -65,4 +60,3 @@ class MyHttpOverrides extends HttpOverrides {
           (X509Certificate cert, String host, int port) => true;
   }
 }
-
